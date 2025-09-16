@@ -7,7 +7,32 @@
             Console.WriteLine(IfNumberContains3());
         }
 
+        //Actual method - not converting to other types
         public static bool IfNumberContains3()
+        {
+            Console.Write($"Enter a positive integer number: ");
+            int input = Convert.ToInt32(Console.ReadLine());
+
+            bool contains3 = false;
+            int currentInput = input;
+
+            while (currentInput > 0)
+            {
+                int lastDigit = currentInput % 10;
+                if (lastDigit == 3)
+                {
+                    contains3 = true;
+                    break;
+                }
+                currentInput /= 10;
+            }
+            return contains3;
+        }
+
+            
+
+        //Alternative method -  validating positive, integer number and converting to string
+        public static bool IfNumberorStringContains3()
         {
             int i = GetPositiveIntegerInput();
             string si = i.ToString();
